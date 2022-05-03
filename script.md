@@ -1,5 +1,5 @@
 # Video Script
 
 ```
-[ 1 ] 
+Teorema Pythagoras, salah satu teorema yang sangat berdampak pada manusia, 
 ```

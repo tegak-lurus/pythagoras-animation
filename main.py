@@ -2,19 +2,22 @@ from manim import *
 class Main(Scene):
     def construct(self):
         tr1 = Main.create_right_triangle(3, 4)
-        tr2 = Main.create_right_triangle(15 / 2, 8 // 2)
-        tr3 = Main.create_right_triangle(24 / 3, 9 // 3)
+        tr2 = Main.create_right_triangle(15 / 2, 8 / 2)
+        tr3 = Main.create_right_triangle(40 / 4, 9 / 4)
+        tr4 = Main.create_right_triangle(24 / 2, 7 / 2)
 
         self.play(*Main.triangle_make(tr1))
         self.play(*Main.triangle_transform(tr1, tr2))
         self.play(*Main.triangle_transform(tr1, tr3))
+        self.play(*Main.triangle_transform(tr1, tr4))
 
     def create_right_triangle(x, y, color=BLUE, color_opacity=0.3):
         # x is width
         # y is height
         tr_w = Polygon([0, 0, 0], [x, 0, 0], [0, y, 0])
         tr_w.set_fill(color, color_opacity)
-        tr_w.move_to(tr_w.get_center() - tr_w.get_center_of_mass())
+        # tr_w.move_to(tr_w.get_center() - tr_w.get_center_of_mass())
+        tr_w.move_to([0, 0, 0])
         tr_w_x = Tex(Main.format_number(x))
         tr_w_x.next_to(tr_w, DOWN)
         tr_w_y = Tex(Main.format_number(y))
